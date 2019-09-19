@@ -1,3 +1,7 @@
+import throwIf from './throw-if';
+import tryCatch from './try-catch';
+
+
 const setRoot = (
   doc,
   view, 
@@ -5,19 +9,15 @@ const setRoot = (
 ) => {
   const rootElem = doc.getElementById('root');
 
-  if (!rootElem) {
-    throw new Error(
-      `On calling setRoot(doc, view, [data]), doc.getElementById("root") returned ${rootElem}.`,
-    );
-  }
+  throwIf(
+    !rootElem,
+    `setRoot > doc.getElementById('root') returned ${rootElem}.`,
+  );
 
-  try {
-    rootElem.innerHTML = view(data);
-  } catch (err) {
-    throw new Error(
-      `On calling setRoot(doc, view, [data]), passing data to the view function failed with message: ${err.message}`,
-    );
-  }
+  tryCatch(
+    () => rootElem.innerHTML = view(data),
+    (err) => `setRoot > view(data) failed with message: ${err.message}`,
+  );
 };
 
 
