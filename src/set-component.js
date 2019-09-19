@@ -19,7 +19,7 @@ const setComponent = (
   );
 
   tryCatch(
-    () => { elem.innerHTML = view(data) },
+    () => { elem.innerHTML = view(data); },
     (err) => `setComponent > view(data) failed with message: ${err.message}`,
   );
 
