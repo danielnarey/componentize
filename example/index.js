@@ -1,5 +1,5 @@
 import 'mini.css';
-import { setComponent, setRoot } from '../dist/index.esm';
+import { setComponent, setRoot } from '../dist/index.cjs';
 
 
 // Main application logic
