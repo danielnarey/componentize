@@ -22,14 +22,14 @@ const setComponent = (
     () => elem.innerHTML = view(data),
     (err) => `setComponent > view(data) failed with message: ${err.message}`,
   );
-  
+
   tryCatch(
     () => {
-      for (let [key, value] of Object.entries(listeners)) {
+      for (const [key, value] of Object.entries(listeners)) {
         elem.addEventListener(key, value);
       }
     },
-    (err) => `setComponent > adding event listeners failed with message: ${err.message}`
+    (err) => `setComponent > adding event listeners failed with message: ${err.message}`,
   );
 
   return updater(elem, view, merge)(data);

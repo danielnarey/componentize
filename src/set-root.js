@@ -4,7 +4,7 @@ import tryCatch from './try-catch';
 
 const setRoot = (
   doc,
-  view, 
+  view,
   data = {},
 ) => {
   const rootElem = doc.getElementById('root');

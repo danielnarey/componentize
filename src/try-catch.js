@@ -1,7 +1,7 @@
 export default (call, msg) => {
   try {
     call();
-  } catch(err) {
+  } catch (err) {
     throw new Error(msg(err));
   }
 };
