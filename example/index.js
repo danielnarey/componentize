@@ -1,6 +1,5 @@
 import 'mini.css';
-import setComponent from '../src/set-component';
-import setRoot from '../src/set-root';
+import { setComponent, setRoot } from '../dist/index.esm';
 
 
 // Main application logic
