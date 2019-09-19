@@ -4,8 +4,8 @@
   "description": "Test project for @danielnarey/componentize",
   "private": true,
   "scripts": {
-    "build": "npm run clean && parcel build index.pug -d ../docs --public-url /puglet/ --no-cache --no-source-maps",
-    "build:map": "npm run clean && parcel build index.pug -d ../docs --public-url /puglet/",
+    "build": "npm run clean && parcel build index.pug -d ../docs --public-url /componentize/ --no-cache --no-source-maps",
+    "build:map": "npm run clean && parcel build index.pug -d ../docs --public-url /componentize/",
     "clean": "mkdir -p ../docs/tmp && rm -r ../docs/*",
     "lint": "eslint --fix index.js",
     "test": "npm run lint",
