@@ -15,7 +15,7 @@ const setRoot = (
   );
 
   tryCatch(
-    () => rootElem.innerHTML = view(data),
+    () => { rootElem.innerHTML = view(data) },
     (err) => `setRoot > view(data) failed with message: ${err.message}`,
   );
 };

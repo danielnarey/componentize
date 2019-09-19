@@ -19,15 +19,15 @@ const setComponent = (
   );
 
   tryCatch(
-    () => elem.innerHTML = view(data),
+    () => { elem.innerHTML = view(data) },
     (err) => `setComponent > view(data) failed with message: ${err.message}`,
   );
 
   tryCatch(
     () => {
-      for (const [key, value] of Object.entries(listeners)) {
+      Object.entries(listeners).forEach(([key, value]) => {
         elem.addEventListener(key, value);
-      }
+      });
     },
     (err) => `setComponent > adding event listeners failed with message: ${err.message}`,
   );
