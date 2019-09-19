@@ -8,7 +8,7 @@ const updater = (elem, view, merge) => (data) => (update) => {
 
   if (!deepEqual(data, merged)) {
     tryCatch(
-      () => { elem.innerHTML = view(merged) },
+      () => { elem.innerHTML = view(merged); },
       (err) => `updater at id='${elem.id}' > view(merged) failed with message: ${err.message}`,
     );
   }
