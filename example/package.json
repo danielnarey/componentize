@@ -1,0 +1,43 @@
+{
+  "name": "@danielnarey/componentize-example",
+  "version": "0.0.0",
+  "description": "Test project for @danielnarey/componentize",
+  "private": true,
+  "scripts": {
+    "build": "npm run clean && parcel build index.pug -d ../docs --public-url /puglet/ --no-cache --no-source-maps",
+    "build:map": "npm run clean && parcel build index.pug -d ../docs --public-url /puglet/",
+    "clean": "mkdir -p ../docs/tmp && rm -r ../docs/*",
+    "lint": "eslint --fix index.js",
+    "test": "npm run lint",
+    "update": "updtr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielnarey/componentize/tree/master/example"
+  },
+  "keywords": [],
+  "author": "Daniel C. Narey",
+  "license": "ISC",
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "mini.css": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "ava": "^2.3.0",
+    "concordance": "^4.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-ava": "^8.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-types": "^1.0.2",
+    "np": "^5.0.3",
+    "parcel": "^1.12.3",
+    "pug": "^2.0.4",
+    "updtr": "^3.1.0"
+  }
+}
