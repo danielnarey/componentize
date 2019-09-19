@@ -1,7 +1,7 @@
 module.exports = {
   basedir: './',
   locals: {
-    title: 'Puglet',
+    title: 'Componentize',
     description: 'Test project',
   },
 };
