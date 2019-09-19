@@ -10,14 +10,14 @@ import { setComponent, setRoot } from '../dist/index.esm';
       (data) => `<header><h1>${data.message}</h1></header><main id='x'></main>`,
       { message: 'Hello, Everybody' },
     );
-    
+
     const updater = setComponent(
       document,
       'x',
       (data) => `<p>This is a component, ${data.name}</p>`,
       { name: 'Dude' },
     );
-    
+
     window.setTimeout(updater, 2000, { name: 'I mean, Sir' });
   } catch (err) {
     console.log(err);
