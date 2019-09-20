@@ -6,9 +6,9 @@
 
 *Componentize* is a small module that offers a lightweight, functional approach to encapsulation for client-side JavaScript applications. It combines the ideas of HTML templating ([Handlebars](https://www.npmjs.com/package/handlebars), [Pug](https://www.npmjs.com/package/pug)), functional components ([React](https://reactjs.org/), [Preact](https://preactjs.com/)), and checking for equality of function arguments to avoid unnecessary diffing or DOM modification ([Elm](https://elm-lang.org/news/blazing-fast-html)). 
 
-Unlike the last three frameworks mentioned, Componentize **does not implement a virtual DOM**, so components are re-rendered on function execution, without diffing and batching DOM changes. This makes Componentize less suitable for games and interactive animations with many, frequent DOM updates. For user interactions in a typical client-side application, however, no appreciable performance difference should be expected in modern browsers. Performance can be optimized by defining small interactive components that do only one thing, and then using static templates for larger sections of content.
+Unlike the last three frameworks mentioned, **Componentize does not implement a virtual DOM**, so components are re-rendered on function execution, without diffing and batching DOM changes. This makes Componentize less suitable for games and interactive animations with many, frequent DOM updates. For user interactions in a typical client-side application, however, no appreciable performance difference should be expected in modern browsers. Performance can be optimized by defining small interactive components that do only one thing, and then using static templates for larger sections of content.
 
-Another difference to more comprehensive frameworks is that Componentize has **no special syntax**, and **no specific build tools** are required.
+Another difference to more comprehensive frameworks is that **Componentize has no special syntax, and no specific build tools are required**.
 
 
 ## Example
