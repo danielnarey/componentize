@@ -13,7 +13,13 @@ Another difference to more comprehensive frameworks is that **Componentize has n
 
 ## Example
 
+
+
+
 ```js
+
+
+
 
 ```
 
@@ -24,8 +30,8 @@ Another difference to more comprehensive frameworks is that **Componentize has n
 
 Replaces the inner HTML of the element at id "root" of *doc* with the HTML string returned by `view(data)`. If *data* is not given, the argument defaults to an empty object `{}`. In basic usage, the reference passed as *doc* should be the global variable `window.document`.
 
-### `setComponent(doc, id, view, [data, [listeners, [merge]]]) => Function`
+### `setComponent(doc, id, view, [data, [listeners, [merge]]]) => Function<* => Function>`
 
 Replaces the inner HTML of the element at *id* of *doc* with the HTML string returned by `view(data)` and returns an update function that will re-render the component when it is passed new data. The optional *listeners* argument is an object where the keys are event names and the values are callback functions to invoke on the event.
 
-Every call to an update function returns a new update function that encapsulates the previous state, allowing rendering to be skipped when the value of the data parameter on the next update would be identical to its value on the last update. The *merge* function specifies how data passed to an update function should be merged with the previous state; if not specified, *merge* defaults to `(a, b) => { ...a, ...b }`.
+Every call to an update function returns a new update function that encapsulates the previous state, allowing rendering to be skipped when the value of the data parameter on the next update would be identical to its value on the last update. The *merge* function specifies how data passed to an update function should be merged with the previous state; if not specified, *merge* defaults to `(previous, update) => { ...previous, ...update }`.

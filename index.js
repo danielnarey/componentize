@@ -1,8 +1,12 @@
-import setComponent from './src/set-component';
-import setRoot from './src/set-root';
+import addListeners from './src/add-listeners';
+import mergeable from './src/mergeable';
+import static from './src/static';
+import updatable from './src/updatable';
 
 
 export default {
-  setComponent,
-  setRoot,
+  addListeners,
+  mergeable,
+  static,
+  updatable,
 };

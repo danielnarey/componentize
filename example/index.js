@@ -1,24 +1,38 @@
 import 'mini.css';
-import { setComponent, setRoot } from '../dist/index.cjs';
+import { static, updatable } from '../dist/index.cjs';
 
 
 // Main application logic
 (function index() {
   try {
-    setRoot(
-      document,
-      (data) => `<header><h1>${data.message}</h1></header><main id='x'></main>`,
-      { message: 'Hello, Everybody' },
-    );
+    static(document, 'root', () => `
+      <form id="formElement" action="javascript:">
+        <label>
+          <span>Add Todo</span>
+          <input id="textField"/>
+        </label>
+        <button type="submit">Add</button>
+        <ul id="todoList">
+        </ul>
+      </form>
+    `);
 
-    const updater = setComponent(
+    const updateList = updatable(
       document,
-      'x',
-      (data) => `<p>This is a component, ${data.name}</p>`,
-      { name: 'Dude' },
+      'todoList',
+      (todos) => todos.map(item => `<li>${item}<li>`).join(),
+      [],
     );
+    
+    const currentItems = [];
 
-    window.setTimeout(updater, 2000, { name: 'I mean, Sir' });
+    addListeners(document, 'formElement', { 
+      submit: (e) => {
+        e.preventDefault();
+        currentItems.push(e.target.elements['textField'].value);
+        updateList(currentItems);
+      },
+    }); 
   } catch (err) {
     console.log(err);
   }
