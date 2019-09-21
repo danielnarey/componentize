@@ -14,7 +14,7 @@ const updatable = (
 
   render(elem, view, data);
   _addListeners(elem, listeners);
-  
+
   return (update) => render(elem, view, update);
 };
 

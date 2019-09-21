@@ -8,7 +8,7 @@ const getElem = (doc, id) => {
     !elem,
     `setComponent > doc.getElementById('${id}') returned ${elem}.`,
   );
-  
+
   return elem;
 };
 

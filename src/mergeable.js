@@ -16,7 +16,7 @@ const mergeable = (
 
   render(elem, view, data);
   _addListeners(elem, listeners);
-  
+
   return recursiveRender(elem, view, data, merge);
 };
 
