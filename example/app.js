@@ -7,12 +7,14 @@ import {
 
 const app = (w) => {
   setStatic(w.document, 'root', () => `
+    <h1>Todo List</h1>
     <form id="formElement" action="javascript:">
       <label>
-        <span>Add Todo</span>
+        <span>Add Item</span>
         <input id="textField"/>
       </label>
-      <button type="submit">Add</button>
+      <button type="submit">Enter</button>
+      <button id="undoButton" type="button">Undo</button>
       <ul id="todoList">
       </ul>
     </form>
@@ -34,6 +36,13 @@ const app = (w) => {
       currentItems.push(textField.value);
       updateList(currentItems);
       textField.value = '';
+    },
+  });
+  
+  addListeners(w.document, 'undoButton', { 
+    click: (e) => {
+      currentItems.pop();
+      updateList(currentItems);
     },
   }); 
 };
