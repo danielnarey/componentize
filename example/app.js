@@ -10,13 +10,12 @@ const app = (w) => {
     <h1>Todo List</h1>
     <form id="formElement" action="javascript:">
       <label>
-        <span>Add Item</span>
+        <strong>Add Item</strong>
         <input id="textField"/>
       </label>
-      <button type="submit">Enter</button>
-      <button id="undoButton" type="button">Undo</button>
-      <ul id="todoList">
-      </ul>
+      <button class="primary" type="submit">Add</button>
+      <button id="undoButton" class="secondary" type="button">Undo</button>
+      <ul id="todoList" class="card"></ul>
     </form>
   `);
 
