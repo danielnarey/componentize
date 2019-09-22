@@ -24,7 +24,7 @@ const app = (w) => {
       </div>
 
       <div class="section">
-        <ul id="todoList" class="card"><em>Nothing to do!</em></ul>
+        <ul id="todoList"><li><em>Nothing to do!</em></li></ul>
       </div>
 
     </div>
