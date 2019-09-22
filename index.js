@@ -5,6 +5,7 @@ import setUpdatable from './src/set-updatable';
 
 
 export default {
+  setUpdateable: setUpdatable,
   addListeners,
   setMergeable,
   setStatic,

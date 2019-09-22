@@ -1,3 +1,4 @@
+/*global window*/
 import 'mini.css';
 import app from './app';
 

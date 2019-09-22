@@ -14,7 +14,7 @@ const app = (w) => {
     </form>
   `);
 
-  const updateList = setUpdateable(
+  const updateList = setUpdatable(
     w.document,
     'todoList',
     (todos) => todos.map(item => `<li>${item}<li>`).join(),
