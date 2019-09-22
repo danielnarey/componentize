@@ -3,7 +3,7 @@ import getElem from './get-elem';
 import render from './render';
 
 
-const static = (
+const setUpdatable = (
   doc,
   id,
   view,
@@ -14,7 +14,9 @@ const static = (
 
   render(elem, view, data);
   _addListeners(elem, listeners);
+
+  return (update) => render(elem, view, update);
 };
 
 
-export default static;
+export default setUpdatable;

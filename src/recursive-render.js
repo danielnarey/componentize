@@ -1,5 +1,3 @@
-/* eslint no-param-reassign: ["error", { "props": false }] */
-
 import deepEqual from 'dequal';
 import render from './render';
 

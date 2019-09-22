@@ -1,3 +1,6 @@
+import tryCatch from './try-catch';
+
+
 const _addListeners = (elem, listeners) => {
   tryCatch(
     () => {

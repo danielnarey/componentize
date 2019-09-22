@@ -1,12 +1,12 @@
 import addListeners from './src/add-listeners';
-import mergeable from './src/mergeable';
-import static from './src/static';
-import updatable from './src/updatable';
+import setMergeable from './src/set-mergeable';
+import setStatic from './src/set-static';
+import setUpdatable from './src/set-updatable';
 
 
 export default {
   addListeners,
-  mergeable,
-  static,
-  updatable,
+  setMergeable,
+  setStatic,
+  setUpdatable,
 };
