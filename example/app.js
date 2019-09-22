@@ -5,8 +5,8 @@ import {
 } from '../dist/index.cjs';
 
 
-const app = (w) => {
-  setStatic(w.document, 'root', () => `
+const app = (w, rootId) => {
+  setStatic(w.document, rootId, () => `
     <div class="card">
       <div class="section">
         <h1>Todo List</h1>

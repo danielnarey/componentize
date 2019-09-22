@@ -5,7 +5,7 @@ import app from './app';
 
 (function index() {
   try {
-    app(window);
+    app(window, 'root');
   } catch (err) {
     console.log(err);
   }
