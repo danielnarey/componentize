@@ -1,4 +1,8 @@
-import { setStatic, setUpdatable } from '../dist/index.cjs';
+import {
+  addListeners, 
+  setUpdatable,
+  setStatic,
+} from '../dist/index.cjs';
 
 
 const app = (w) => {
