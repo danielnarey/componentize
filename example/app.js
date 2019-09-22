@@ -24,7 +24,7 @@ const app = (w) => {
       </div>
 
       <div class="section">
-        <ul id="todoList"><li><em>Nothing to do!</em></li></ul>
+        <ul id="todoList"></ul>
       </div>
 
     </div>
@@ -34,7 +34,7 @@ const app = (w) => {
     w.document,
     'todoList',
     (todos) => todos.map(item => `<li>${item}</li>`).join(''),
-    [],
+    ['<em>Nothing to do!</em>'],
   );
   
   const currentItems = [];
