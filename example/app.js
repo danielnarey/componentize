@@ -21,7 +21,7 @@ const app = (w) => {
   const updateList = setUpdatable(
     w.document,
     'todoList',
-    (todos) => todos.map(item => `<li>${item}<li>`).join(),
+    (todos) => todos.map(item => `<li>${item}<li>`).join(''),
     [],
   );
   
@@ -29,9 +29,11 @@ const app = (w) => {
 
   addListeners(w.document, 'formElement', { 
     submit: (e) => {
+      const textField = e.target.elements['textField'];
       e.preventDefault();
-      currentItems.push(e.target.elements['textField'].value);
+      currentItems.push(textField.value);
       updateList(currentItems);
+      textField.value = '';
     },
   }); 
 };
