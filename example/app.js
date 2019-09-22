@@ -11,6 +11,7 @@ const app = (w) => {
       <div class="section">
         <h1>Todo List</h1>
       </div>
+
       <div class="section">
         <form id="formElement" action="javascript:">
           <label>
@@ -20,9 +21,12 @@ const app = (w) => {
           <button class="primary" type="submit">Add</button>
           <button id="undoButton" class="secondary" type="button">Undo</button>
         </form>
+      </div>
+
       <div class="section">
         <ul id="todoList" class="card"><em>Nothing to do!</em></ul>
       </div>
+
     </div>
   `);
 
