@@ -1,4 +1,4 @@
-/*eslint no-param-reassign: ["error", { "props": false }]*/
+/* eslint no-param-reassign: ["error", { "props": false }] */
 
 import tryCatch from './try-catch';
 
