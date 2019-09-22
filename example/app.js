@@ -7,16 +7,23 @@ import {
 
 const app = (w) => {
   setStatic(w.document, 'root', () => `
-    <h1>Todo List</h1>
-    <form id="formElement" action="javascript:">
-      <label>
-        <strong>Add Item</strong>
-        <input id="textField"/>
-      </label>
-      <button class="primary" type="submit">Add</button>
-      <button id="undoButton" class="secondary" type="button">Undo</button>
-      <ul id="todoList" class="card"></ul>
-    </form>
+    <div class="card">
+      <div class="section">
+        <h1>Todo List</h1>
+      </div>
+      <div class="section">
+        <form id="formElement" action="javascript:">
+          <label>
+            <strong>Add an item</strong>
+            <input id="textField"/>
+          </label>
+          <button class="primary" type="submit">Add</button>
+          <button id="undoButton" class="secondary" type="button">Undo</button>
+        </form>
+      <div class="section>
+        <ul id="todoList" class="card"><em>Nothing to do!</em></ul>
+      </div>
+    </div>
   `);
 
   const updateList = setUpdatable(
