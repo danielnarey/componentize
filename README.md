@@ -40,6 +40,7 @@ Same arguments as *setStatic*, but returns an update function that will re-rende
 
 - **`RETURNS`** a function that takes one argument and re-renders `view(update)` with that argument as *update*.
 
+Because both spellings are acceptable, `setUpdateable` (note the "e") is provided as an alias — but be consistent in your own code!
 
 ### `setMergeable(doc, id, view, [data, [listeners, [merge]]])`
 
