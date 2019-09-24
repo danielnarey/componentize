@@ -25,7 +25,7 @@ Another difference to more comprehensive frameworks is that **Componentize has n
 
 ### `setStatic(doc, id, view, [data, [listeners]])`
 
-Set a static component by replacing an element's descendant tree with the contents of the HTML string returned by `view(data)`.
+Set a static component by replacing an element's descendant tree (typically, an empty one) with the contents of the HTML string returned by `view(data)`.
 
 - **`doc`** is a reference to a [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) or [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) (typically, the global `window.document`)
 - **`id`** is the id string of the element in *doc* that will be the root element of the rendered component 
