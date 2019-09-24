@@ -1,11 +1,11 @@
 /* global window */
 import 'mini.css';
-import app from './app';
+import todoList from './apps/todoList';
 
 
 (function index() {
   try {
-    app(window, 'root');
+    todoList(window, 'example1');
   } catch (err) {
     console.log(err);
   }

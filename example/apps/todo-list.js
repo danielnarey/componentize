@@ -5,7 +5,7 @@ import {
 } from '../dist/index.cjs';
 
 
-const app = (w, rootId) => {
+const todoList = (w, rootId) => {
   setStatic(w.document, rootId, () => `
     <div class="card">
       <div class="section">
@@ -58,4 +58,4 @@ const app = (w, rootId) => {
 };
 
 
-export default app;
+export default todoList;
