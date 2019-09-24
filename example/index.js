@@ -1,6 +1,6 @@
 /* global window */
 import 'mini.css';
-import todoList from './apps/todoList';
+import todoList from './apps/todo-list';
 
 
 (function index() {
