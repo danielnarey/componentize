@@ -28,7 +28,7 @@ Another difference to more comprehensive frameworks is that **Componentize has n
 Set a static component by replacing an element's descendant tree with the contents of the HTML string returned by `view(data)`.
 
 - **`doc`** is a reference to a [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) or [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) (typically, the global `window.document`)
-- **`id`** is the id string of the element in *doc* that will be the root element of the static component 
+- **`id`** is the id string of the element in *doc* that will be the root element of the rendered component 
 - **`view`** is a function with no more than one required argument that returns an HTML string
 - **`data`** (defaults to `{}`) is an argument to *view* (typically, an Object)
 - **`listeners`** (defaults to `{}`) may be used to add listeners to the root element of the component: it is an Object where each key is an event name and each value is a callback function to invoke on that event.
