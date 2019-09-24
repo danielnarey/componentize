@@ -2,9 +2,9 @@
 
 **Create an updatable component from any function that generates HTML**
 
----
+## Features
 
-*Componentize* is a small module that offers a lightweight, functional approach to encapsulation for client-side JavaScript applications. It combines the ideas of HTML templating ([Handlebars](https://www.npmjs.com/package/handlebars), [Pug](https://www.npmjs.com/package/pug)), encapsulated components ([React](https://reactjs.org/), [Preact](https://preactjs.com/)), and checking for equality of function arguments to avoid unnecessary diffing or DOM modification ([Elm](https://elm-lang.org/news/blazing-fast-html)). 
+**Componentize offers a lightweight, functional approach to encapsulation for client-side JavaScript applications.** It combines the ideas of HTML templating ([Handlebars](https://www.npmjs.com/package/handlebars), [Pug](https://www.npmjs.com/package/pug)), encapsulated components ([React](https://reactjs.org/), [Preact](https://preactjs.com/)), and pure functions for rendering view and updating state ([Elm](https://guide.elm-lang.org/architecture/)). 
 
 Unlike the last three frameworks mentioned, **Componentize does not implement a virtual DOM**, so components are re-rendered on function execution, without diffing and batching DOM changes. This makes Componentize less suitable for games and interactive animations with many, frequent DOM updates. For user interactions in a typical client-side application, however, no appreciable performance difference should be expected in modern browsers. Performance can be optimized by defining small interactive components that do only one thing, and then using static templates for larger sections of content.
 
@@ -25,14 +25,27 @@ Another difference to more comprehensive frameworks is that **Componentize has n
 
 ### `setStatic(doc, id, view, [data, [listeners]])`
 
-Replaces the inner HTML of the element at *id* of *doc* with the HTML string returned by `view(data)`. If *data* is not given, the argument defaults to an empty object `{}`. The optional *listeners* argument is an object where each key is an event name and each value is a callback function to invoke on the event. In basic usage, the reference passed as *doc* should be the global `window.document`.
+Set a static component by replacing an element's descendant tree with the contents of the HTML string returned by `view(data)`.
 
-### `setUpdatable(doc, id, view, [data, [listeners]]) => Function<Object>`
+- **`doc`** is a reference to a [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) or [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) (typically, the global `window.document`)
+- **`id`** is the id string of the element in *doc* that will be the root element of the static component 
+- **`view`** is a function with no more than one required argument that returns an HTML string
+- **`data`** (defaults to `{}`) is an argument to *view* (typically, an Object)
+- **`listeners`** (defaults to `{}`) may be used to add listeners to the root element of the component: it is an Object where each key is an event name and each value is a callback function to invoke on that event.
 
-Identical to *setStatic*, but returns an update function that will re-render the component when it is passed new data.
 
-### `setMergeable(doc, id, view, [data, [listeners, [merge]]]) => Function<* => Function>`
+### `setUpdatable(doc, id, view, [data, [listeners]])`
 
-Like *setUpdatable*, except its return function encapsulates the previous state so that partial data updates can be merged. The *merge* function is an optional argument specifying how data passed to an update function should be merged with the previous state; if not specified, *merge* defaults to `(previous, update) => { ...previous, ...update }`. 
+Same arguments as *setStatic*, but returns an update function that will re-render the component when it is passed new data.
 
-After rendering `view(merged)`, the update function returns a new function encapsulating the merged state, which must be assigned to a reference to be invoked on the next update. As a performance optimization, rendering is skipped when the value of the data parameter on the next update would be identical to its value on the last update, but a new (identical) function is still returned.
+- **`RETURNS`** a function that takes one argument and re-renders `view(update)` with that argument as *update*.
+
+
+### `setMergeable(doc, id, view, [data, [listeners, [merge]]])`
+
+Similar to *setUpdatable*, except its return function encapsulates the previous state so that partial data updates can be merged. 
+
+- **`merge`** (defaults to `(a, b) => { ...a, ...b }`) is a function specifying how data passed to an update function should be merged with the previous state
+- **`RETURNS`** a function that takes one argument and re-renders `view(merged)`, with the *merged* being result of `merge(data, update)`; after rendering, this function returns a new function encapsulating the merged state, and so on for every iteration.
+
+As a performance optimization, rendering is skipped when the value of the data parameter on the next update would be identical to its value on the last update, but a new (identical) function is still returned.
