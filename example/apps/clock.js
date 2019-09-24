@@ -27,7 +27,7 @@ const clock = (w, rootId) => {
   `);
   
   const formatTime = tinydate('{HH}:{mm}:{ss}');
-  const formatDate = tinydate('{DD}/{MM}/{YYYY}');
+  const formatDate = tinydate('{MM}/{DD}/{YYYY}');
   
   const updateTime = setUpdatable(
     w.document,
@@ -37,12 +37,12 @@ const clock = (w, rootId) => {
   
   const updateDate = setUpdatable(
     w.document,
-    'clockTime',
+    'clockDate',
     () => formatDate(),
   );
   
   w.setInterval(updateTime, 1000);
-  w.setInterval(updateDate, 1000);
+  w.setInterval(updateDate, 60000);
 };
 
 
