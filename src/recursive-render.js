@@ -9,7 +9,7 @@ const recursiveRender = (elem, view, data, merge) => (update) => {
     render(elem, view, merged);
   }
 
-  return recursiveRender(elem, view, merge, merged);
+  return recursiveRender(elem, view, merged, merge);
 };
 
 
