@@ -33,7 +33,7 @@ const spinner = (w, rootId) => {
 
   const transition = (now) => {
     start = start || now;
-    rotateRect = rotateRect((now - start) * 0.36);
+    rotateRect = rotateRect((now - start) * 0.006);
     w.requestAnimationFrame(transition);
   };
 
