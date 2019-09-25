@@ -1,4 +1,5 @@
 import test from 'ava';
+import { JSDOM } from 'jsdom';
 import {
   addListeners,
   setMergeable,
@@ -7,9 +8,8 @@ import {
 } from '../dist/index.cjs';
 
 
-const doc = new DocumentFragment();
-const rootElem = doc.createElement('div').setAttribute('id', 'root');
-doc.appendChild(root);
+const dom = new JSDOM(`<!DOCTYPE html><div id="root"></div>`);
+const doc = dom.window.document;
 
 
 test('setStatic', (t) => {
