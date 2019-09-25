@@ -7,7 +7,7 @@
     "build": "npm run clean && parcel build index.pug -d ../docs --public-url /componentize/ --no-cache --no-source-maps",
     "build:map": "npm run clean && parcel build index.pug -d ../docs --public-url /componentize/",
     "clean": "mkdir -p ../docs/tmp && rm -r ../docs/*",
-    "lint": "eslint --fix index.js",
+    "lint": "eslint --fix index.js apps",
     "test": "npm run lint",
     "update": "updtr"
   },
