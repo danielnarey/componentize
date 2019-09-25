@@ -4,7 +4,7 @@ import {
   setMergeable,
   setStatic,
   setUpdatable,
-} from './dist/index.cjs';
+} from '../dist/index.cjs';
 
 
 const doc = new DocumentFragment();
