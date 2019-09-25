@@ -29,12 +29,13 @@ const spinner = (w, rootId) => {
     (a, b) => ((a + b >= 360) ? (a + b - 360) : a + b),
   );
 
-  const rate = (1 / 1000) * (6 / 360);
-  let start;
+  const rate = (1 / 1000) * (30 / 360);
+  let lastStamp;
 
-  const transition = (now) => {
-    start = start || now;
-    rotateRect = rotateRect((now - start) * rate);
+  const transition = (currentStamp) => {
+    lastStamp = lastStamp || currentStamp;
+    rotateRect = rotateRect((currentStamp - lastStamp) * rate);
+    lastStamp = currentStamp;
     w.requestAnimationFrame(transition);
   };
 
