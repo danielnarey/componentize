@@ -1,7 +1,7 @@
 module.exports = {
   basedir: './',
   locals: {
-    title: 'Componentize',
-    description: 'Test project',
+    title: '@danielnarey/componentize',
+    description: 'Live examples of a few simple, componentized apps',
   },
 };

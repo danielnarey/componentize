@@ -15,7 +15,45 @@ Another difference to more comprehensive frameworks is that **Componentize has n
 
 ```js
 
+// mini-clock.js
 
+import tinydate from 'tinydate';
+import {
+  setUpdatable,
+  setStatic,
+} from '@danielnarey/componentize';
+
+
+const miniClock = (w, rootId) => {
+  setStatic(w.document, rootId, () => `
+    <p>The time is now
+      <span id="clockTime"></span> 
+    </p>
+  `);
+  
+  const formatTime = tinydate('{HH}:{mm}:{ss}');
+  
+  const updateTime = setUpdatable(
+    w.document,
+    'clockTime',
+    () => formatTime(),
+  );
+  
+  w.setInterval(updateTime, 1000);
+};
+
+
+// index.js
+
+import miniClock from './mini-clock';
+
+(function index() {
+  try {
+    miniClock(window, 'miniClock');
+  } catch (err) {
+    console.log(err);
+  }
+}());
 
 
 ```
