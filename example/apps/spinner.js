@@ -29,11 +29,12 @@ const spinner = (w, rootId) => {
     (a, b) => ((a + b >= 360) ? (a + b - 360) : a + b),
   );
 
+  const rate = (1 / 10000) * (1 / 360);
   let start;
 
   const transition = (now) => {
     start = start || now;
-    rotateRect = rotateRect((now - start) * 0.006);
+    rotateRect = rotateRect((now - start) * rate);
     w.requestAnimationFrame(transition);
   };
 
