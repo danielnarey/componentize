@@ -15,3 +15,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../../dist/index.cjs":"H2CV"}],"Focm":[function(require,module,exports) {
 "use strict";require("mini.css");var e=t(require("./apps/clock")),i=t(require("./apps/todo-list")),r=t(require("./apps/spinner"));function t(e){return e&&e.__esModule?e:{default:e}}!function(){try{(0,e.default)(window,"example1"),(0,i.default)(window,"example2"),(0,r.default)(window,"example3")}catch(t){console.log(t)}}();
 },{"mini.css":"hwyT","./apps/clock":"tItb","./apps/todo-list":"aXe2","./apps/spinner":"a/5d"}]},{},["Focm"], null)
+//# sourceMappingURL=/componentize/example.a9631dbb.js.map
