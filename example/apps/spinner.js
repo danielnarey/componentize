@@ -1,5 +1,6 @@
 import tinydate from 'tinydate';
 import {
+  setMergeable,
   setStatic,
 } from '../../dist/index.cjs';
 
