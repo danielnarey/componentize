@@ -1,4 +1,3 @@
-import tinydate from 'tinydate';
 import {
   setMergeable,
   setStatic,
@@ -21,9 +20,7 @@ const spinner = (w, rootId) => {
     </div>
   `);
   
-  const rectangle = `<rect x="50" y="49" width="45" height="2" fill="black"/>`
-  
-  let rotate = setMergeable(
+  let rotateRect = setMergeable(
     w.document,
     'svgWrapper',
     (rotation) => `<rect x="50" y="50" width="45" height="2" fill="black" transform="rotate(${rotation})"/>`,
@@ -36,7 +33,7 @@ const spinner = (w, rootId) => {
   
   const transition = (now) => {
     start = start ? start : now;
-    rotate = rotate((now - start) * 3.6);
+    rotateRect = rotateRect((now - start) * 3.6);
     w.requestAnimationFrame(transition);
   };
   

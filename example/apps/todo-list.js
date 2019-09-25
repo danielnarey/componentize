@@ -50,7 +50,7 @@ const todoList = (w, rootId) => {
   });
   
   addListeners(w.document, 'undoButton', { 
-    click: (e) => {
+    click: () => {
       currentItems.pop();
       updateList(currentItems);
     },
