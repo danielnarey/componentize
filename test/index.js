@@ -66,28 +66,28 @@ test('setMergeable', (t) => {
   );
   
   t.is(
-    doc.getElementById('pElem').innerHTML,
+    doc.getElementById('pElem').innerHTML.replace(/\s/g, ''),
     'Hello,<em>Robert.</em>',
   );
   
   updateMessage = updateMessage({ punctuation: '!' });
   
   t.is(
-    doc.getElementById('pElem').innerHTML,
+    doc.getElementById('pElem').innerHTML.replace(/\s/g, ''),
     'Hello,<em>Robert!</em>',
   );
   
   updateMessage = updateMessage({ name: 'Bob' });
   
   t.is(
-    doc.getElementById('pElem').innerHTML,
+    doc.getElementById('pElem').innerHTML.replace(/\s/g, ''),
     'Hello,<em>Bob!</em>',
   );
   
   updateMessage({ greeting: 'Aloha' });
   
   t.is(
-    doc.getElementById('pElem').innerHTML,
+    doc.getElementById('pElem').innerHTML.replace(/\s/g, ''),
     'Aloha,<em>Bob!</em>',
   );
 });
