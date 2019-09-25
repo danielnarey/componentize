@@ -16,18 +16,78 @@ test('setStatic', (t) => {
   setStatic(
     doc,
     'root',
-    (name) => `<p id="pElem">Hello,<span>${name}</span></p>`,
-    'Daniel',
+    (data) => `<p id="pElem">Hello,<em>${data.name}</em></p>`,
+    { name: 'Daniel' },
   );
   
-  const pElem = doc.getElementById('pElem');
-  
-  t.is(pElem.innerHTML, 'Hello,<span>Daniel</span>');
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Hello,<em>Daniel</em>',
+  );
 });
 
 
-test('preserveChanges', (t) => {
-  const pElem = doc.getElementById('pElem');
+test('setUpdatable', (t) => {
+  const updateMessage = setUpdatable(
+    doc,
+    'root',
+    (data) => `<p id="pElem">Hello,<em>${data.name}</em></p>`,
+    { name: 'Robert' },
+  );
   
-  t.is(pElem.innerHTML, 'Hello,<span>Daniel</span>');
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Hello,<em>Robert</em>',
+  );
+  
+  updateMessage({ name: 'Bob' });
+  
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Hello,<em>Bob</em>',
+  );
+});
+
+
+test('setMergeable', (t) => {
+  let updateMessage = setMergeable(
+    doc,
+    'root',
+    (data) => `
+      <p id="pElem">${data.greeting},
+        <em>${data.name}${data.punctuation}</em>
+      </p>
+    `,
+    { 
+      greeting: 'Hello',
+      name: 'Robert',
+      punctuation: '.',
+    },
+  );
+  
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Hello,<em>Robert.</em>',
+  );
+  
+  updateMessage = updateMessage({ punctuation: '!' });
+  
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Hello,<em>Robert!</em>',
+  );
+  
+  updateMessage = updateMessage({ name: 'Bob' });
+  
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Hello,<em>Bob!</em>',
+  );
+  
+  updateMessage({ greeting: 'Aloha' });
+  
+  t.is(
+    doc.getElementById('pElem').innerHTML,
+    'Aloha,<em>Bob!</em>',
+  );
 });
