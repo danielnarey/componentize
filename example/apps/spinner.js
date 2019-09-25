@@ -19,24 +19,24 @@ const spinner = (w, rootId) => {
 
     </div>
   `);
-  
+
   let rotateRect = setMergeable(
     w.document,
     'svgWrapper',
     (rotation) => `<rect x="50" y="50" width="45" height="2" fill="black" transform="rotate(${rotation})"/>`,
     0,
     {},
-    (a, b) => (a + b >= 360) ? (a + b - 360) : a + b,
+    (a, b) => ((a + b >= 360) ? (a + b - 360) : a + b),
   );
-  
+
   let start;
-  
+
   const transition = (now) => {
-    start = start ? start : now;
+    start = start || now;
     rotateRect = rotateRect((now - start) * 3.6);
     w.requestAnimationFrame(transition);
   };
-  
+
   w.requestAnimationFrame(transition);
 };
 

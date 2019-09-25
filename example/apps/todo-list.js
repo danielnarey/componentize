@@ -1,5 +1,5 @@
 import {
-  addListeners, 
+  addListeners,
   setUpdatable,
   setStatic,
 } from '../../dist/index.cjs';
@@ -33,28 +33,28 @@ const todoList = (w, rootId) => {
   const updateList = setUpdatable(
     w.document,
     'todoList',
-    (todos) => todos.map(item => `<li>${item}</li>`).join(''),
+    (todos) => todos.map((item) => `<li>${item}</li>`).join(''),
     ['<em>Nothing to do!</em>'],
   );
-  
+
   const currentItems = [];
 
-  addListeners(w.document, 'formElement', { 
+  addListeners(w.document, 'formElement', {
     submit: (e) => {
-      const textField = e.target.elements['textField'];
+      const { textField } = e.target.elements;
       e.preventDefault();
       currentItems.push(textField.value);
       updateList(currentItems);
       textField.value = '';
     },
   });
-  
-  addListeners(w.document, 'undoButton', { 
+
+  addListeners(w.document, 'undoButton', {
     click: () => {
       currentItems.pop();
       updateList(currentItems);
     },
-  }); 
+  });
 };
 
 
