@@ -24,3 +24,10 @@ test('setStatic', (t) => {
   
   t.is(pElem.innerHTML, 'Hello,<span>Daniel</span>');
 });
+
+
+test('preserveChanges', (t) => {
+  const pElem = doc.getElementById('pElem');
+  
+  t.is(pElem.innerHTML, 'Hello,<span>Daniel</span>');
+});
