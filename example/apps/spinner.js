@@ -29,7 +29,7 @@ const spinner = (w, rootId) => {
     (a, b) => ((a + b >= 360) ? (a + b - 360) : a + b),
   );
 
-  const rate = (1 / 10000) * (1 / 360);
+  const rate = (1 / 1000) * (1 / 360);
   let start;
 
   const transition = (now) => {
