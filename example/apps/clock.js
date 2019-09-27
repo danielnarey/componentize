@@ -2,7 +2,7 @@ import tinydate from 'tinydate';
 import {
   setUpdatable,
   setStatic,
-} from '../../dist/index.cjs';
+} from '../../dist/index';
 
 
 const clock = (w, rootId) => {

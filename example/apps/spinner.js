@@ -1,7 +1,7 @@
 import {
   setMergeable,
   setStatic,
-} from '../../dist/index.cjs';
+} from '../../dist/index';
 
 
 const spinner = (w, rootId) => {

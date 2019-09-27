@@ -2,7 +2,7 @@ import {
   addListeners,
   setUpdatable,
   setStatic,
-} from '../../dist/index.cjs';
+} from '../../dist/index';
 
 
 const todoList = (w, rootId) => {
