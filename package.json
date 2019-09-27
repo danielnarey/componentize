@@ -1,6 +1,6 @@
 {
   "name": "@danielnarey/componentize",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create an updatable component from any function that generates HTML",
   "source": "index.js",
   "main": "dist/index.js",
