@@ -5,7 +5,7 @@ import {
   setMergeable,
   setStatic,
   setUpdatable,
-} from '../dist/index.cjs';
+} from '../dist/index';
 
 
 const dom = new JSDOM(`<!DOCTYPE html><div id="root"></div>`);
