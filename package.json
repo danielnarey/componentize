@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "Create an updatable component from any function that generates HTML",
   "source": "index.js",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "mjs": "dist/index.mjs",
   "files": [
     "dist"
   ],
