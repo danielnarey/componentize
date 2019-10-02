@@ -8,7 +8,7 @@
 
 Unlike the last three frameworks mentioned, **Componentize does not implement a virtual DOM**, so components are re-rendered on function execution, without auto-magically diffing and batching DOM changes. For applications like animations and games where many, frequent DOM updates will be processed, `window.requestAnimationFrame(...)` should be used along with this package to batch calls to update functions and execute them at timed intervals. Performance in re-rendering may be optimized by defining small interactive components that do only one thing, and then using static templates for larger sections of content.
 
-Another difference to more comprehensive frameworks is that **Componentize has no special syntax beyond ES2018 ([object spread](https://github.com/tc39/proposal-object-rest-spread)), and no specific build tools are required**. Using *some* modern build toolchain is recommended. The example modules included in the documentation are transpiled to browser targets with [Babel](https://babeljs.io/) and bundled with [Parcel](https://parceljs.org/).
+Another difference to more comprehensive frameworks is that **Componentize has no special syntax, and no specific build tools are required**. Using *some* modern build toolchain is recommended, as the package's source code targets ES2018+/Node 10+ with the expectation that application source code will be transpiled for distribution. The example modules included in the documentation are transpiled to browser targets with [Babel](https://babeljs.io/) and bundled with [Parcel](https://parceljs.org/).
 
 
 ## Example
@@ -22,7 +22,6 @@ import {
   setUpdatable,
   setStatic,
 } from '@danielnarey/componentize';
-
 
 const miniClock = (w, rootId) => {
   setStatic(w.document, rootId, () => `
@@ -41,6 +40,8 @@ const miniClock = (w, rootId) => {
   
   w.setInterval(updateTime, 1000);
 };
+
+export default miniClock;
 
 
 // index.js
