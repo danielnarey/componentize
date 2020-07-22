@@ -1,14 +1,16 @@
-# @danielnarey/componentize [![Build Status](https://travis-ci.com/danielnarey/componentize.svg?branch=master)](https://travis-ci.com/danielnarey/componentize) [![npm (scoped)](https://img.shields.io/npm/v/@danielnarey/componentize)](https://www.npmjs.com/package/@danielnarey/componentize) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@danielnarey/componentize)
+# @danielnarey/componentize 
 
-*Create an updatable component from any function that generates HTML*
+**[Deprecated] Create an updatable component from any function that generates HTML**
+
+> **Deprecation Warning**: *This experimental library is no longer in active development and will not be updated in response to Node.js version  releases or security vulnerabilities identified in the dependency tree.*
 
 ## Features
 
-**Componentize offers a lightweight, functional approach to encapsulation for client-side JavaScript applications.** It combines the ideas of HTML templating ([Handlebars](https://www.npmjs.com/package/handlebars), [Pug](https://www.npmjs.com/package/pug)), encapsulated components ([React](https://reactjs.org/), [Preact](https://preactjs.com/)), and pure functions for rendering view and updating state ([Elm](https://guide.elm-lang.org/architecture/)). 
+Componentize offers a lightweight, functional approach to encapsulation for client-side JavaScript applications. It combines the ideas of HTML templating ([Handlebars](https://www.npmjs.com/package/handlebars), [Pug](https://www.npmjs.com/package/pug)), encapsulated components ([React](https://reactjs.org/), [Preact](https://preactjs.com/)), and pure functions for rendering view and updating state ([Elm](https://guide.elm-lang.org/architecture/)). 
 
-Unlike the last three frameworks mentioned, **Componentize does not implement a virtual DOM**, so components are re-rendered on function execution, without auto-magically diffing and batching DOM changes. For applications like animations and games where many, frequent DOM updates will be processed, `window.requestAnimationFrame(...)` should be used along with this package to batch calls to update functions and execute them at timed intervals. Performance in re-rendering may be optimized by defining small interactive components that do only one thing, and then using static templates for larger sections of content.
+Unlike the last three frameworks mentioned, Componentize does not implement a virtual DOM, so components are re-rendered on function execution, without auto-magically diffing and batching DOM changes. For applications like animations and games where many, frequent DOM updates will be processed, `window.requestAnimationFrame(...)` should be used along with this package to batch calls to update functions and execute them at timed intervals. Performance in re-rendering may be optimized by defining small interactive components that do only one thing, and then using static templates for larger sections of content.
 
-Another difference to more comprehensive frameworks is that **Componentize has no special syntax, and no specific build tools are required**. Using *some* modern build toolchain is recommended, as the package's source code targets ES2018+/Node 10+ with the expectation that application source code will be transpiled for distribution. The example modules included in the documentation are transpiled to browser targets with [Babel](https://babeljs.io/) and bundled with [Parcel](https://parceljs.org/).
+Another difference to more comprehensive frameworks is that Componentize has no special syntax, and no specific build tools are required. Using *some* modern build toolchain is recommended, as the package's source code targets ES2018+/Node 10+ with the expectation that application source code will be transpiled for distribution. The example modules included in the documentation are transpiled to browser targets with [Babel](https://babeljs.io/) and bundled with [Parcel](https://parceljs.org/).
 
 
 ## Example
