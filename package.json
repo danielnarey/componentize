@@ -1,7 +1,7 @@
 {
   "name": "@danielnarey/componentize",
   "version": "0.2.2",
-  "description": "Create an updatable component from any function that generates HTML",
+  "description": "[Deprecated] Create an updatable component from any function that generates HTML",
   "source": "index.js",
   "main": "dist/index.js",
   "mjs": "dist/index.mjs",
@@ -20,14 +20,6 @@
     "type": "git",
     "url": "https://github.com/danielnarey/componentize"
   },
-  "keywords": [
-    "components",
-    "UI",
-    "functional",
-    "dynamic",
-    "responsive",
-    "view"
-  ],
   "author": "Daniel C. Narey",
   "license": "ISC",
   "engines": {
